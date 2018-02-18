@@ -1,0 +1,8 @@
+{% set operator_spoken = {
+    "+": "plus",
+    "-": "moins",
+    "*": "fois",
+    "/": "divisé par"
+    }[operator] | default("") -%}
+
+Combien font {{n_1}} {{operator_spoken}} {{n_2}}?

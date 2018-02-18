@@ -1,0 +1,35 @@
+  - name: "arithmetics"
+    signals:
+      - order: "exercices de calcul"
+      - order: "exercices de maths"
+    neurons:
+     - arithmetics:
+          maxresult: "100"
+          operator: "*"
+          file_template: templates/arithmetics_fr.j2
+          kalliope_memory:
+            result: "{{result}}"
+     - neurotransmitter:
+          from_answer_link:
+            - synapse: "synapse-correct"
+              answers:
+                - "{{ kalliope_memory['result'] }}"
+          default: "synapse-not-correct"
+
+  - name: "synapse-correct"
+    signals:
+      - order: "synapse-correct"
+    neurons:
+      - say:
+          message:
+              - "Superbe!"
+              - "Parfait!"
+              - "Exact!"
+
+  - name: "synapse-not-correct"
+    signals:
+      - order: "synapse-not-correct"
+    neurons:
+      - say:
+          message:
+              - "{{ kalliope_memory['result'] }} est la bonne réponse"

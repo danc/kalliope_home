@@ -1,0 +1,6 @@
+- name: "say-bonnenuit-fr"
+  signals:
+    - order: "Bonne nuit"
+  neurons:
+    - say:
+        message: "Bonne nuit les petits !"

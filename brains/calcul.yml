@@ -1,0 +1,45 @@
+  - name: "calculate-add"
+    signals:
+      - order: "calcul {{ var1 }} + {{ var2 }}"
+      - order: "calcul {{ var1 }} plus {{ var2 }}"
+    neurons:
+      - calculator:
+          variable_1: "{{ var1 }}"
+          variable_2: "{{ var2 }}"
+          operator: "add"
+          say_template: "Le résultat est {{ solution }}"
+
+  - name: "calculate-subtract"
+    signals:
+      - order: "calcul {{ var1 }} - {{ var2 }}"
+      - order: "calcul {{ var1 }} moins {{ var2 }}"
+      - order: "calcule {{ var1 }} - {{ var2 }}"
+      - order: "calcule {{ var1 }} moins {{ var2 }}"
+    neurons:
+      - calculator:
+          variable_1: "{{ var1 }}"
+          variable_2: "{{ var2 }}"
+          operator: "subtract"
+          say_template: "Le résultat est {{ solution }}"
+  
+  - name: "calculate-multiply"
+    signals:
+      - order: "calcul {{ var1 }} x {{ var2 }}"
+      - order: "calcul {{ var1 }} multiplié par {{ var2 }}"
+    neurons:
+      - calculator:
+          variable_1: "{{ var1 }}"
+          variable_2: "{{ var2 }}"
+          operator: "multiply"
+          say_template: "Le résultat est {{ solution }}"
+  
+  - name: "calculate-divide"
+    signals:
+      - order: "calcul {{ var1 }} / {{ var2 }}"
+      - order: "calcul {{ var1 }} divisé par {{ var2 }}"
+    neurons:
+      - calculator:
+          variable_1: "{{ var1 }}"
+          variable_2: "{{ var2 }}"
+          operator: "divide"
+          say_template: "Le résultat est {{ solution }}"

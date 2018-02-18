@@ -1,0 +1,15 @@
+            
+- name: "get-the-weather"
+  signals:
+    - order: "quel temps fait-il à {{location}}"
+  neurons:
+    - openweathermap:
+        api_key: "60a4be6f8e323f73ed9a19f22da39697"
+        lang: "fr"
+        temp_unit: "celsius"
+        country: "FR"
+        location: "{{location}}"
+        say_template:
+        - "Aujourd'hui a {{ location }} le temps est {{ weather_today }} avec une température de {{ temp_today_temp }} degrés et demain le temps sera {{ weather_tomorrow }} avec une température de {{ temp_tomorrow_temp }} degrés"
+
+        

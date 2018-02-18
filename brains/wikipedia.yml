@@ -1,0 +1,12 @@
+            
+- name: "wikipedia-search"
+  neurons:
+    - wikipedia_searcher:
+        language: "fr"
+        query: "{{ query }}"
+        file_template: "templates/wikipedia_search.j2"
+  signals:
+    - order: "cherche sur wikipédia {{ query }}"
+    - order: "recherche sur wikipédia {{ query }}"
+
+        

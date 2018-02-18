@@ -1,0 +1,9 @@
+- name: "news-trimartolod"
+  signals:
+    - order: "Quelles sont les nouvelles de tri martolod"
+    - order: "Quels sont les nouvelles de tri martolod"
+  neurons:
+    - rss_reader:
+        feed_url: "http://trimartolod.free.fr/index.php?feed/atom"
+        max_items: 1
+        file_template: templates/rss.j2
